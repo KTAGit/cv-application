@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  height: 100dvh;
+  overflow: hidden;
 }
 
 .navbar {
@@ -46,4 +48,114 @@ body {
 .profile-icon {
   width: 38px;
   height: 38px;
+}
+
+.main-sidebar {
+  border-bottom: solid red 1px;
+  background-color: #f9fafb;
+  height: calc(100vh - 63px);
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: solid 1px #10182723;
+  .button-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.section-info {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  p {
+    margin-left: 25px;
+    margin: 10px 0px 10px 25px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    letter-spacing: 0.5px;
+    font-weight: light;
+  }
+}
+
+.complete-p {
+  margin-top: 10px;
+  font-size: 11.5px;
+  font-weight: light;
+  color: #5e6968;
+}
+
+.category-section div img {
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+}
+
+.personal-info-wrapper {
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  p {
+    font-family: "Inter", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: light;
+    font-size: 14px;
+    margin-left: 20px;
+  }
+}
+
+.education-wrapper {
+  display: flex;
+  align-items: center;
+  p {
+    font-family: "Inter", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: light;
+    font-size: 14px;
+    margin-left: 20px;
+    color: black;
+  }
+}
+.work-history-wrapper {
+  display: flex;
+  align-items: center;
+  p {
+    font-family: "Inter", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: light;
+    font-size: 14px;
+    margin-left: 20px;
+  }
+}
+.skills-wrapper {
+  display: flex;
+  align-items: center;
+  p {
+    font-family: "Inter", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: light;
+    font-size: 14px;
+    margin-left: 20px;
+  }
+}
+
+.preview-btn {
+  height: fit-content;
+  margin: 0px 25px 0px 25px;
+  padding: 10px 30px 10px 30px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  background-color: #0d9488;
+  border: none;
+  border-radius: 5px;
+}
+
+.active {
+  background-color: #f1fdfa;
+  border-right: #0d9488 solid 3px;
+  color: #0d9488;
 }
