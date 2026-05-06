@@ -2,13 +2,13 @@ import personIcon from "./assets/icons/user-avatar.png";
 
 export function PersonalInfo() {
   return (
-    <div className="personal-info-container form">
+    <div className="personal-info-container form-container">
       <div className="title-wrapper">
         <img src={personIcon} alt="" />
         <h2>Personal Details</h2>
       </div>
 
-      <form className="personal-info-form" action="#">
+      <form className="personal-info-form form" action="#">
         <div className="fullName wrapper">
           <label htmlFor="fullName">FULL NAME</label>
           <input id="fullName" type="text" placeholder="Full Name" />

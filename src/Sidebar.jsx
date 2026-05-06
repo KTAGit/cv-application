@@ -7,6 +7,7 @@ import workHistoryIcon from "./assets/icons/suit-case.png";
 import defaultSkillsIcon from "./assets/icons/default-automation.png";
 import skillsIcon from "./assets/icons/automation.png";
 import { PersonalInfo } from "./PersonalInfo";
+import { Education } from "./Education";
 import { useState } from "react";
 
 export function Sidebar() {
@@ -16,6 +17,8 @@ export function Sidebar() {
     switch (isActive) {
       case 0:
         return <PersonalInfo />;
+      case 1:
+        return <Education />;
     }
   }
 

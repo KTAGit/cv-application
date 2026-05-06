@@ -2,6 +2,7 @@ body {
   margin: 0;
   height: 100dvh;
   overflow: hidden;
+  background-color: #ecedee;
 }
 
 .navbar {
@@ -11,6 +12,7 @@ body {
   justify-content: space-between;
   align-items: center;
   border-bottom: solid #10182723;
+  background-color: #ffffff;
 }
 
 .cv-logo {
@@ -166,8 +168,8 @@ body {
   display: flex;
 }
 
-.personal-info-container {
-  width: fit-content;
+.form-container {
+  min-width: 356px;
   padding: 10px 30px 0px 30px;
   background-color: #f7f8f9;
   border-right: solid 1px #10182723;
@@ -190,7 +192,7 @@ body {
   filter: contrast(250%);
 }
 
-.personal-info-form {
+.form {
   display: flex;
   flex-direction: column;
   font-family: "Inter", sans-serif;
@@ -242,4 +244,114 @@ body {
   outline: none;
   border: #0d9488 solid 1px;
   box-shadow: 0px 0px 3px 1px #0d94894b;
+}
+
+#fullName {
+  width: 96%;
+}
+#email {
+  width: 96%;
+}
+#phoneNumber {
+  width: 96%;
+}
+
+.education-info-form {
+  gap: 20px;
+  margin-bottom: 30px;
+  border-bottom: #0f6c64 solid 1px;
+  padding-top: 0;
+  border: solid 1px #1ab9ac38;
+  border-radius: 10px;
+}
+
+.education-info-form > * {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.graduation-date {
+  margin-bottom: 20px;
+}
+
+.subtitle-wrapper {
+  background-color: #d7f5f554;
+  border-bottom: solid 1px #19afa322;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subtitle-wrapper h3 {
+  width: fit-content;
+  font-weight: 500;
+}
+
+.subtitle-wrapper button {
+  border: none;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  img {
+    width: 25px;
+    height: 25px;
+    transform: scale(1.5);
+    filter: contrast(30%);
+  }
+}
+
+.subtitle-wrapper button:hover {
+  cursor: pointer;
+}
+
+.title-btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-education-btn {
+  width: fit-content;
+  height: 50%;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  color: #0f6c64;
+  border: none;
+  background-color: transparent;
+}
+
+.education-info-form div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.education-info-form input {
+  width: 300px;
+  height: 40px;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  font-size: 14px;
+  padding-left: 10px;
+  border: #5e69681f solid 1px;
+  border-radius: 5px;
+}
+
+.education-info-form input:focus {
+  outline: none;
+  border: #0d9488 solid 1px;
+  box-shadow: 0px 0px 3px 1px #0d94894b;
+}
+
+.collapse {
+  display: none !important;
+}
+
+.rotate {
+  rotate: 180deg;
 }
