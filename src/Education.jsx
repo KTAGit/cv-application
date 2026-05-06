@@ -35,7 +35,7 @@ export function Education() {
       {items.map((item, index) => (
         <form key={index} className="education-info-form form" action="#">
           <div className="subtitle-wrapper">
-            <h3>{item.schoolName || "Standord University"}</h3>
+            <h3>{item.schoolName || "Stanford University"}</h3>
             <button
               type="button"
               onClick={() =>
