@@ -9,6 +9,7 @@ import skillsIcon from "./assets/icons/automation.png";
 import { PersonalInfo } from "./PersonalInfo";
 import { Education } from "./Education";
 import { WorkHistory } from "./WorkHistory";
+import { Skills } from "./Skills";
 import { useState } from "react";
 
 export function Sidebar() {
@@ -22,6 +23,8 @@ export function Sidebar() {
         return <Education />;
       case 2:
         return <WorkHistory />;
+      case 3:
+        return <Skills />;
     }
   }
 
