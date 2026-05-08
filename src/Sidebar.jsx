@@ -10,15 +10,28 @@ import { PersonalInfo } from "./PersonalInfo";
 import { Education } from "./Education";
 import { WorkHistory } from "./WorkHistory";
 import { Skills } from "./Skills";
+import { Resume } from "./Resume";
 import { useState } from "react";
 
 export function Sidebar() {
   const [isActive, setIsActive] = useState(0);
+  const [resumeData, setResumeData] = useState({
+    personal: {},
+    education: [],
+    workHistory: [],
+    skills: [],
+  });
+  function handlePersonalData(data) {
+    setResumeData((prev) => ({
+      ...prev,
+      personal: data,
+    }));
+  }
 
   function renderSection() {
     switch (isActive) {
       case 0:
-        return <PersonalInfo />;
+        return <PersonalInfo sendData={handlePersonalData} />;
       case 1:
         return <Education />;
       case 2:
@@ -100,6 +113,14 @@ export function Sidebar() {
         </div>
       </div>
       {renderSection()}
+      {
+        <Resume
+          fullName={resumeData.personal.fullName}
+          email={resumeData.personal.email}
+          phone={resumeData.personal.phone}
+          address={resumeData.personal.address}
+        />
+      }
     </div>
   );
 }
