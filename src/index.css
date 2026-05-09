@@ -533,9 +533,15 @@ body {
 .personal-info-sec {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 30px;
+  border-bottom: solid 2px #0d9487;
 }
 
 .name-role-wrapper * {
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  font-size: 14px;
   margin: 0;
   margin-bottom: 5px;
   margin-top: 5px;
@@ -550,4 +556,31 @@ body {
     margin-bottom: 5px;
     margin-top: 5px;
   }
+}
+
+.title-prev {
+  margin-top: 10px;
+  color: #03685f;
+}
+
+.work-history-sec {
+  margin-top: 20px;
+}
+
+.work-experience-title {
+  border-left: #0d9487 solid 3px;
+  padding-left: 15px;
+}
+
+.work-wrapper {
+  display: flex;
+  gap: 30px;
+}
+
+.duration-wrapper {
+  width: 20%;
+}
+
+.work-detail-wrapper {
+  width: 80%;
 }

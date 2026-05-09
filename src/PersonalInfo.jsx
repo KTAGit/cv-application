@@ -11,14 +11,13 @@ export function PersonalInfo({ sendData }) {
   });
 
   function handleChange(e) {
-    console.log(e.target.name);
     const { name, value } = e.target;
     setPersonalData((prev) => ({ ...prev, [name]: value }));
     const updatedData = {
       ...personalData,
       [name]: value,
     };
-    sendData(updatedData);
+    sendData("personal", updatedData);
   }
 
   return (
@@ -66,6 +65,16 @@ export function PersonalInfo({ sendData }) {
             type="text"
             name="address"
             placeholder="Springfield, IL"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="wrapper">
+          <label htmlFor="title">PROFESSIONAL TITLE</label>
+          <input
+            id="fullName"
+            name="title"
+            type="text"
+            placeholder="eg. SENIOR PRODUCT DESIGNER"
             onChange={handleChange}
           />
         </div>
