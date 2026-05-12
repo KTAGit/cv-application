@@ -361,7 +361,7 @@ body {
 
 #responsibilities {
   min-width: 290px;
-  min-height: 140px;
+  min-height: 80px;
   font-family: "Inter", sans-serif;
   letter-spacing: 0.5px;
   font-weight: 300;
@@ -372,7 +372,7 @@ body {
   border-radius: 5px;
   padding: 10px;
   resize: none;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #responsibilities:focus {
@@ -390,6 +390,10 @@ body {
   color: #0f6c64;
   border: none;
   background-color: transparent;
+}
+
+.add-work-btn:hover {
+  cursor: pointer;
 }
 
 .work-info-form {
@@ -578,9 +582,76 @@ body {
 }
 
 .duration-wrapper {
-  width: 20%;
+  width: 25%;
 }
 
 .work-detail-wrapper {
-  width: 80%;
+  width: 75%;
+  margin-bottom: 20px;
+}
+
+#responsibilities {
+  max-height: 70px !important;
+}
+
+.responsibilities-prev {
+  white-space: pre-wrap;
+  line-height: 20px;
+  padding-left: 0;
+  padding-left: 15px;
+
+  * {
+    margin-bottom: 10px;
+  }
+}
+
+.label-btn-wrapper {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between;
+  * {
+    width: fit-content;
+  }
+}
+
+.more-responsibility-btn {
+  width: fit-content;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  color: #0f6c64;
+  border: none;
+  background-color: transparent;
+}
+
+.more-responsibility-btn:hover {
+  cursor: pointer;
+}
+
+.responsibility-storage > * {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  font-size: 14px;
+  padding: 10px 10px 5px 10px;
+  border-radius: 10px;
+  background-color: #74e6dd25;
+  color: #0f6c64;
+  border: solid 1px #0d948925;
+  text-align: center;
+}
+
+.responsibility-storage {
+  margin-bottom: 20px;
+}
+
+.role-prev {
+  margin-bottom: 5px;
+}
+.company-name-prev {
+  margin-top: 5px;
+  color: #03685f;
 }

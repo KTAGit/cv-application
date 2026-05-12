@@ -21,7 +21,7 @@ export function Sidebar() {
     workHistory: {},
     skills: [],
   });
-  console.log(resumeData.workHistory);
+
   function handleData(type, data) {
     setResumeData((prev) => ({
       ...prev,

@@ -1,6 +1,4 @@
 export function Resume(props) {
-  console.log(Array.isArray(props.workHistory));
-  console.log(props.workHistory);
   return (
     <div className="resume-container">
       <section className="personal-info-sec">
@@ -28,9 +26,11 @@ export function Resume(props) {
                   <p className="role-prev">{work.role}</p>
                   <p className="company-name-prev">{work.companyName}</p>
                   <div className="responsibilities-wrapper">
-                    <p className="responsibilities-prev">
-                      {work.responsibilities}
-                    </p>
+                    <ul className="responsibilities-prev">
+                      {work.responsibilities.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </div>
