@@ -1,5 +1,4 @@
 export function Resume(props) {
-  console.log(props.education);
   return (
     <div className="resume-container">
       <section className="personal-info-sec">
@@ -52,7 +51,6 @@ export function Resume(props) {
                         Number(edu.graduationDate - 4) +
                         " — " +
                         edu.graduationDate;
-                      console.log(year);
                       return year;
                     })()}
                   </p>
@@ -64,6 +62,14 @@ export function Resume(props) {
               </div>
             ))
           : ""}
+      </section>
+      <section className="skills-sec">
+        <h3 className="skills-title">Skills</h3>
+        <div className="skills-wrapper-prev">
+          {props.skills.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
+        </div>
       </section>
     </div>
   );

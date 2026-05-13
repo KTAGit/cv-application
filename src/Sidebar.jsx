@@ -38,7 +38,7 @@ export function Sidebar() {
       case 2:
         return <WorkHistory sendData={handleData} />;
       case 3:
-        return <Skills />;
+        return <Skills sendData={handleData} />;
     }
   }
 
