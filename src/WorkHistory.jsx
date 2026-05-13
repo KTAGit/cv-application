@@ -122,6 +122,7 @@ export function WorkHistory({ sendData }) {
               <button
                 type="button"
                 className="more-responsibility-btn"
+                disabled={!item.currentResponsibility.trim()}
                 onClick={() => {
                   const updated = items.map((itm, idx) =>
                     idx === index

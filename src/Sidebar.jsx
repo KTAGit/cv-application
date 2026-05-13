@@ -17,7 +17,7 @@ export function Sidebar() {
   const [isActive, setIsActive] = useState(0);
   const [resumeData, setResumeData] = useState({
     personal: {},
-    education: [],
+    education: {},
     workHistory: {},
     skills: [],
   });
@@ -122,6 +122,8 @@ export function Sidebar() {
           address={resumeData.personal.address}
           title={resumeData.personal.title}
           workHistory={resumeData.workHistory}
+          education={resumeData.education}
+          skills={resumeData.skills}
         />
       }
     </div>

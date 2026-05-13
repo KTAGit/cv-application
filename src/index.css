@@ -398,7 +398,7 @@ body {
 
 .work-info-form {
   gap: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   border-bottom: #0f6c64 solid 1px;
   padding-top: 0;
   border: solid 1px #1ab9ac38;
@@ -652,6 +652,30 @@ body {
   margin-bottom: 5px;
 }
 .company-name-prev {
+  margin-top: 5px;
+  color: #03685f;
+}
+
+.education-title {
+  border-left: #0d9487 solid 3px;
+  padding-left: 15px;
+}
+
+.education-wrapper-prev {
+  display: flex;
+  gap: 30px;
+}
+
+.education-detail-wrapper {
+  width: 75%;
+  margin-bottom: 0px;
+}
+
+.degree-prev {
+  margin-bottom: 5px;
+}
+
+.school-name-prev {
   margin-top: 5px;
   color: #03685f;
 }

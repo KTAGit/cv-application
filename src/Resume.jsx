@@ -1,4 +1,5 @@
 export function Resume(props) {
+  console.log(props.education);
   return (
     <div className="resume-container">
       <section className="personal-info-sec">
@@ -27,8 +28,8 @@ export function Resume(props) {
                   <p className="company-name-prev">{work.companyName}</p>
                   <div className="responsibilities-wrapper">
                     <ul className="responsibilities-prev">
-                      {work.responsibilities.map((item) => (
-                        <li>{item}</li>
+                      {work.responsibilities.map((item, index) => (
+                        <li key={index}>{item}</li>
                       ))}
                     </ul>
                   </div>
@@ -39,6 +40,30 @@ export function Resume(props) {
       </section>
       <section className="education-sec">
         <h3 className="education-title">Education</h3>
+        {Array.isArray(props.education)
+          ? props.education.map((edu, index) => (
+              <div key={index} className="education-wrapper-prev">
+                <div className="duration-wrapper">
+                  <p className="duration-prev">
+                    {(() => {
+                      if (!edu.graduationDate || edu.graduationDate.length < 4)
+                        return;
+                      const year =
+                        Number(edu.graduationDate - 4) +
+                        " — " +
+                        edu.graduationDate;
+                      console.log(year);
+                      return year;
+                    })()}
+                  </p>
+                </div>
+                <div className="education-detail-wrapper">
+                  <p className="degree-prev">{edu.degree}</p>
+                  <p className="school-name-prev">{edu.schoolName}</p>
+                </div>
+              </div>
+            ))
+          : ""}
       </section>
     </div>
   );

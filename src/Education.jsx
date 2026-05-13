@@ -2,7 +2,7 @@ import { useState } from "react";
 import educationIcon from "./assets/icons/graduation-cap.png";
 import dropDownIcon from "./assets/icons/down-arrow.png";
 
-export function Education() {
+export function Education({ sendData }) {
   const [items, setItems] = useState([
     {
       schoolName: "",
@@ -12,10 +12,19 @@ export function Education() {
     },
   ]);
 
-  function handleChange(index, value) {
+  function handleChange(index, value, type) {
+    if (type === "graduationDate") {
+      console.log("THIS IS", value);
+      if (!Number(value)) {
+        return;
+      }
+      console.log();
+    }
     const updated = [...items];
-    updated[index].schoolName = value;
+    updated[index][type] = value;
     setItems(updated);
+    // console.log(updated);
+    sendData("education", updated);
   }
 
   return (
@@ -61,7 +70,9 @@ export function Education() {
               type="text"
               name="schoolName"
               placeholder="Stanford University"
-              onChange={(e) => handleChange(index, e.target.value)}
+              onChange={(e) =>
+                handleChange(index, e.target.value, "schoolName")
+              }
             />
           </div>
           <div className={item.isExpanded ? "degree wrapper" : "collapse"}>
@@ -70,13 +81,22 @@ export function Education() {
               type="text"
               name="degree"
               placeholder="B.S Computer Science"
+              onChange={(e) => handleChange(index, e.target.value, "degree")}
             />
           </div>
           <div
             className={item.isExpanded ? "graduation-date wrapper" : "collapse"}
           >
-            <label htmlFor="graduationDate">GRADUATION DATE</label>
-            <input type="text" name="graducationDate" placeholder="May 2018" />
+            <label htmlFor="graduationDate">GRADUATION YEAR</label>
+            <input
+              type="text"
+              name="graduationDate"
+              placeholder="eg. 2020"
+              onChange={(e) => {
+                const value = e.target.value.slice(0, 4);
+                handleChange(index, value, "graduationDate");
+              }}
+            />
           </div>
         </form>
       ))}
