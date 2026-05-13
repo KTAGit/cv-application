@@ -13,12 +13,29 @@ import { Skills } from "./Skills";
 import { Resume } from "./Resume";
 import { useState } from "react";
 
-export function Sidebar() {
+export function Sidebar({ data }) {
   const [isActive, setIsActive] = useState(0);
   const [resumeData, setResumeData] = useState({
     personal: {},
-    education: {},
-    workHistory: {},
+    education: [
+      {
+        schoolName: "",
+        degree: "",
+        graduationDate: "",
+        isExpanded: true,
+      },
+    ],
+    workHistory: [
+      {
+        companyName: "",
+        role: "",
+        startDate: "",
+        endDate: "",
+        responsibilities: [],
+        currentResponsibility: "",
+        isExpanded: true,
+      },
+    ],
     skills: [],
   });
 
@@ -32,13 +49,17 @@ export function Sidebar() {
   function renderSection() {
     switch (isActive) {
       case 0:
-        return <PersonalInfo sendData={handleData} />;
+        return (
+          <PersonalInfo sendData={handleData} data={resumeData.personal} />
+        );
       case 1:
-        return <Education sendData={handleData} />;
+        return <Education sendData={handleData} data={resumeData.education} />;
       case 2:
-        return <WorkHistory sendData={handleData} />;
+        return (
+          <WorkHistory sendData={handleData} data={resumeData.workHistory} />
+        );
       case 3:
-        return <Skills sendData={handleData} />;
+        return <Skills sendData={handleData} data={resumeData.skills} />;
     }
   }
 

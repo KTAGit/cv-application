@@ -2,14 +2,13 @@ import { useState } from "react";
 import automationIcon from "./assets/icons/automation.png";
 import { use } from "react";
 
-export function Skills({ sendData }) {
-  const [tags, setTags] = useState([]);
+export function Skills({ sendData, data }) {
+  const [tags, setTags] = useState(data || []);
   const [inputValue, setInputValue] = useState("");
 
   function handleAddSkill() {
     if (!inputValue.trim()) return;
 
-    // setTags([...tags, inputValue]);
     setInputValue("");
     setTags((prev) => {
       const updated = [...prev, inputValue];

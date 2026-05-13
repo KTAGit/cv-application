@@ -2,28 +2,18 @@ import { useState } from "react";
 import educationIcon from "./assets/icons/graduation-cap.png";
 import dropDownIcon from "./assets/icons/down-arrow.png";
 
-export function Education({ sendData }) {
-  const [items, setItems] = useState([
-    {
-      schoolName: "",
-      degree: "",
-      graduationDate: "",
-      isExpanded: true,
-    },
-  ]);
+export function Education({ sendData, data }) {
+  const [items, setItems] = useState(data);
 
   function handleChange(index, value, type) {
     if (type === "graduationDate") {
-      console.log("THIS IS", value);
       if (!Number(value)) {
         return;
       }
-      console.log();
     }
     const updated = [...items];
     updated[index][type] = value;
     setItems(updated);
-    // console.log(updated);
     sendData("education", updated);
   }
 
@@ -69,6 +59,7 @@ export function Education({ sendData }) {
             <input
               type="text"
               name="schoolName"
+              value={item.schoolName}
               placeholder="Stanford University"
               onChange={(e) =>
                 handleChange(index, e.target.value, "schoolName")
@@ -80,6 +71,7 @@ export function Education({ sendData }) {
             <input
               type="text"
               name="degree"
+              value={item.degree}
               placeholder="B.S Computer Science"
               onChange={(e) => handleChange(index, e.target.value, "degree")}
             />
@@ -91,6 +83,7 @@ export function Education({ sendData }) {
             <input
               type="text"
               name="graduationDate"
+              value={item.graduationDate}
               placeholder="eg. 2020"
               onChange={(e) => {
                 const value = e.target.value.slice(0, 4);

@@ -2,18 +2,8 @@ import { useState } from "react";
 import suitCase from "./assets/icons/suit-case.png";
 import dropDownIcon from "./assets/icons/down-arrow.png";
 
-export function WorkHistory({ sendData }) {
-  const [items, setItems] = useState([
-    {
-      companyName: "",
-      role: "",
-      startDate: "",
-      endDate: "",
-      responsibilities: [],
-      currentResponsibility: "",
-      isExpanded: true,
-    },
-  ]);
+export function WorkHistory({ sendData, data }) {
+  const [items, setItems] = useState(data);
 
   function handleChange(index, value, type) {
     type === "startDate" ? (value = value.slice(0, 4)) : value;
@@ -83,6 +73,7 @@ export function WorkHistory({ sendData }) {
             <input
               type="text"
               name="companyName"
+              value={item.companyName}
               placeholder="CloudNexus Systems"
               onChange={(e) => {
                 handleChange(index, e.target.value, "companyName");
@@ -94,6 +85,7 @@ export function WorkHistory({ sendData }) {
             <input
               type="text"
               name="role"
+              value={item.role}
               placeholder="Senior Software Engineer"
               onChange={(e) => handleChange(index, e.target.value, "role")}
             />
@@ -104,6 +96,7 @@ export function WorkHistory({ sendData }) {
               className="start-date"
               type="date"
               name="startDate"
+              value={item.startDate}
               onChange={(e) => handleChange(index, e.target.value, "startDate")}
             />
           </div>
@@ -112,6 +105,7 @@ export function WorkHistory({ sendData }) {
             <input
               type="text"
               name="endDate"
+              value={item.endDate}
               placeholder="MM/DD/YYYY or Present"
               onChange={(e) => handleChange(index, e.target.value, "endDate")}
             />

@@ -2,13 +2,15 @@ import { useState } from "react";
 import { useEffect } from "react";
 import personIcon from "./assets/icons/user-avatar.png";
 
-export function PersonalInfo({ sendData }) {
-  const [personalData, setPersonalData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    address: "",
-  });
+export function PersonalInfo({ sendData, data }) {
+  const [personalData, setPersonalData] = useState(
+    data || {
+      fullName: "",
+      email: "",
+      phone: "",
+      address: "",
+    },
+  );
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -33,6 +35,7 @@ export function PersonalInfo({ sendData }) {
           <input
             id="fullName"
             name="fullName"
+            value={personalData.fullName}
             type="text"
             placeholder="Full Name"
             onChange={handleChange}
@@ -44,6 +47,7 @@ export function PersonalInfo({ sendData }) {
             id="email"
             type="email"
             name="email"
+            value={personalData.email}
             placeholder="eg. name@example.com"
             onChange={handleChange}
           />
@@ -54,6 +58,7 @@ export function PersonalInfo({ sendData }) {
             id="phoneNumber"
             type="tel"
             name="phone"
+            value={personalData.phone}
             placeholder="+1 (555) 123-4567"
             onChange={handleChange}
           />
@@ -64,6 +69,7 @@ export function PersonalInfo({ sendData }) {
             id="address"
             type="text"
             name="address"
+            value={personalData.address}
             placeholder="Springfield, IL"
             onChange={handleChange}
           />
@@ -73,6 +79,7 @@ export function PersonalInfo({ sendData }) {
           <input
             id="fullName"
             name="title"
+            value={personalData.title}
             type="text"
             placeholder="eg. SENIOR PRODUCT DESIGNER"
             onChange={handleChange}
