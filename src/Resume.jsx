@@ -2,7 +2,9 @@ export function Resume(props) {
   return (
     <div
       className={
-        props.showSidebar ? "resume-container" : "resume-container show-mobile"
+        props.showSidebar
+          ? "resume-container"
+          : "resume-container show-mobile preview-mode"
       }
     >
       <section className="personal-info-sec">
