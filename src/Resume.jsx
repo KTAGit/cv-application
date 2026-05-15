@@ -1,6 +1,10 @@
 export function Resume(props) {
   return (
-    <div className="resume-container">
+    <div
+      className={
+        props.showSidebar ? "resume-container" : "resume-container show-mobile"
+      }
+    >
       <section className="personal-info-sec">
         <div className="name-role-wrapper">
           <h3 className="fullname-prev">{props.fullName || "Full Name"}</h3>

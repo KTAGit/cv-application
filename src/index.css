@@ -17,7 +17,19 @@ body {
 
 .cv-logo {
   height: fit-content;
-  margin: 0px 25px 0px 25px;
+  margin: 0px 0px 0px 25px;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  color: #0d9488;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.cv-logo-mobile {
+  height: fit-content;
+  margin: 0px 0px 0px 15px;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: bold;
@@ -33,6 +45,12 @@ body {
   padding-right: 25px;
 }
 
+.profile-wrapper-mobile {
+  display: flex;
+  align-items: center;
+  padding-right: 15px;
+}
+
 .download-btn {
   height: fit-content;
   margin: 0px 25px 0px 25px;
@@ -41,6 +59,18 @@ body {
   font-weight: bold;
   font-size: 15px;
   letter-spacing: 0.5px;
+  color: #ffffff;
+  background-color: #0d9488;
+  border: none;
+  border-radius: 5px;
+}
+
+.download-btn-mobile {
+  margin: 0px 15px 0px 15px;
+  padding: 10px 10px 10px 10px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
   color: #ffffff;
   background-color: #0d9488;
   border: none;
@@ -141,20 +171,6 @@ body {
     font-size: 14px;
     margin-left: 20px;
   }
-}
-
-.preview-btn {
-  height: fit-content;
-  margin: 0px 25px 0px 25px;
-  padding: 10px 30px 10px 30px;
-  font-family: "Inter", sans-serif;
-  font-weight: bold;
-  font-size: 15px;
-  letter-spacing: 0.5px;
-  color: #ffffff;
-  background-color: #0d9488;
-  border: none;
-  border-radius: 5px;
 }
 
 .active {
@@ -709,6 +725,22 @@ body {
   margin-top: 20px;
 }
 
+.preview-btn {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #65748a;
+  border: none;
+  background-color: transparent;
+  height: 38px;
+}
+
+.hidden {
+  display: none;
+}
 @media (max-width: 1670px) {
   .section-info {
     display: none;
@@ -719,10 +751,6 @@ body {
 
   .category-wrapper {
     margin-top: 15px;
-  }
-
-  .preview-btn {
-    display: none;
   }
 }
 
@@ -747,19 +775,16 @@ body {
     display: none;
   }
 
+  .resume-container.show-mobile {
+    display: block;
+  }
+
   .section-info {
     display: block;
   }
 
   .main-sidebar {
     width: 240px;
-  }
-
-  .preview-btn {
-    display: block;
-  }
-
-  .form-container {
   }
 }
 
@@ -881,10 +906,6 @@ body {
     margin: 0;
     height: 30px;
     width: 30px;
-  }
-
-  .preview-btn {
-    display: none;
   }
 
   .wrapper > input {

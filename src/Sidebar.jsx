@@ -13,7 +13,7 @@ import { Skills } from "./Skills";
 import { Resume } from "./Resume";
 import { useState } from "react";
 
-export function Sidebar({ data }) {
+export function Sidebar({ data, showSidebar }) {
   const [isActive, setIsActive] = useState(0);
   const [resumeData, setResumeData] = useState({
     personal: {},
@@ -65,7 +65,7 @@ export function Sidebar({ data }) {
 
   return (
     <div className="main-wrapper">
-      <div className="main-sidebar">
+      <div className={showSidebar ? "main-sidebar" : "hidden"}>
         <div className="category-section">
           <div className="section-info">
             <p>Resume Sections</p>
@@ -130,13 +130,11 @@ export function Sidebar({ data }) {
             </div>
           </div>
         </div>
-        <div className="button-wrapper">
-          <button className="preview-btn">Preview Resume</button>
-        </div>
       </div>
-      {renderSection()}
+      {showSidebar ? renderSection() : ""}
       {
         <Resume
+          showSidebar={showSidebar}
           fullName={resumeData.personal.fullName}
           email={resumeData.personal.email}
           phone={resumeData.personal.phone}
