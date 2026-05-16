@@ -13,7 +13,7 @@ import { Skills } from "./Skills";
 import { Resume } from "./Resume";
 import { useState } from "react";
 
-export function Sidebar({ data, showSidebar }) {
+export function Sidebar({ data, showSidebar, downloadPDF, resumeRef }) {
   const [isActive, setIsActive] = useState(0);
   const [resumeData, setResumeData] = useState({
     personal: {},
@@ -134,6 +134,8 @@ export function Sidebar({ data, showSidebar }) {
       {showSidebar ? renderSection() : ""}
       {
         <Resume
+          resumeRef={resumeRef}
+          downloadPdf={downloadPDF}
           showSidebar={showSidebar}
           fullName={resumeData.personal.fullName}
           email={resumeData.personal.email}

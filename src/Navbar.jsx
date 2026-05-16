@@ -2,7 +2,7 @@ import { useState } from "react";
 import userIcon from "./assets/icons/user.png";
 import previewBtn from "./assets/icons/Preview-icon.png";
 
-export function Navbar({ showSidebar, setShowSidebar }) {
+export function Navbar({ showSidebar, setShowSidebar, downloadPDF }) {
   const isMobile = window.innerWidth <= 660;
   return (
     <div className="navbar">
@@ -15,7 +15,10 @@ export function Navbar({ showSidebar, setShowSidebar }) {
           {showSidebar ? "PREVIEW" : "EDIT"}
         </button>
 
-        <button className={isMobile ? "download-btn-mobile" : "download-btn"}>
+        <button
+          onClick={downloadPDF}
+          className={isMobile ? "download-btn-mobile" : "download-btn"}
+        >
           Download PDF
         </button>
         <img className="profile-icon" src={userIcon} alt="" />

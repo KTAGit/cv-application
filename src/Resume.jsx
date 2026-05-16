@@ -1,6 +1,8 @@
+import { useRef } from "react";
 export function Resume(props) {
   return (
     <div
+      ref={props.resumeRef}
       className={
         props.showSidebar
           ? "resume-container"
