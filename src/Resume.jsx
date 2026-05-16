@@ -1,5 +1,8 @@
 import { useRef } from "react";
 export function Resume(props) {
+  function getYear(startDate) {
+    return startDate.slice(0, 4);
+  }
   return (
     <div
       ref={props.resumeRef}
@@ -27,7 +30,7 @@ export function Resume(props) {
               <div key={index} className="work-wrapper">
                 <div className="duration-wrapper">
                   <p className="duration-prev">
-                    {work.startDate + " — " + work.endDate}
+                    {getYear(work.startDate) + " — " + work.endDate}
                   </p>
                 </div>
                 <div className="work-detail-wrapper">

@@ -6,8 +6,6 @@ export function WorkHistory({ sendData, data }) {
   const [items, setItems] = useState(data);
 
   function handleChange(index, value, type) {
-    type === "startDate" ? (value = value.slice(0, 4)) : value;
-
     if (type === "endDate") {
       if (value.includes("/") || value.includes("-")) {
         value = value.slice(-4);
