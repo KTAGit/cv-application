@@ -1,16 +1,36 @@
-# React + Vite
+# CV Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive CV/Resume Builder application built with React and Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Add and edit personal information
+- Add educational experience
+- Add practical work experience
+- Live resume preview with real-time updates
+- Responsive mobile layout
+- PDF download support
 
-## React Compiler
+## Built With
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- JavaScript
+- CSS
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `components/` — reusable React components
+- `styles/` — CSS files
+- `App.jsx` — main application logic
+
+## Notes
+
+During development, some components may render twice in the console. This is caused by `React.StrictMode` and is normal behavior in development mode.
+
+## Installation
+
+```bash
+npm install
+npm run dev
+```
